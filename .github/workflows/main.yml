@@ -10,9 +10,11 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build
         uses: TartanLlama/actions-eleventy@v1.1
+        with:
+            install_dependencies: true
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v1.1.0
         env:
-          PUBLISH_DIR: target 
+          PUBLISH_DIR: target
           PUBLISH_BRANCH: gh-pages
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
