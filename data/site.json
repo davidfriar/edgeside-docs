@@ -1,0 +1,8 @@
+{
+  "title": "EdgeSide Docs",
+  "tagline": "Livin' on the Edge",
+  "baseurl": "/",
+  "github": {
+    "repo": "https://github.com/davidfriar/edgeside"
+  }
+}

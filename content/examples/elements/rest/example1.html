@@ -1,0 +1,14 @@
+---
+templateEngineOverride: false
+title: A Simple REST Query
+description: We execute a simple REST query, in this case to a service which provides
+  time data. We dump the output to the screen using the [Debug](/elements/debug) element.
+---
+
+<script type="edgeside/rest"
+  data-edgeside-key="londonTime"
+  data-edgeside-endpoint="http://worldtimeapi.org/api/timezone/Europe/London">
+</script>
+<script type="edgeside/debug"
+        data-edgeside-key="londonTime">
+</script>

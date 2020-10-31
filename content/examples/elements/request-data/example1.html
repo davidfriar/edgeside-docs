@@ -1,0 +1,17 @@
+---
+templateEngineOverride: false
+title: Use Request Data
+description: We use the Request Data element to ask for information gathered from the user's
+  HTTP request.
+  We dump the output to the screen using the [Debug](/elements/debug) element.
+  *Note that the information available can vary depending on the environment the
+  edgeside code is running in. (In wrangler preview for example, be aware that cloudflare
+  information will not be available.)*
+---
+<script type="edgeside/request-data"
+        data-edgeside-key="requestData">
+</script>
+
+<script type="edgeside/debug"
+  data-edgeside-key="requestData">
+</script>

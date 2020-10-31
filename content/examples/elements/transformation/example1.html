@@ -1,0 +1,30 @@
+---
+templateEngineOverride: false
+title: Format Timezone Data
+description: We fetch some data from a service, but unfortunately the data is not exactly in
+  the format we need. We use the transform element to apply a JSONata transofrmation to it.
+  In this case we define a couple of helper functions (*$offset* and *$formattedDateTime*) and then use
+  these in our declaration of the output that we want. In this example we then simply output our transformed data
+  directly using the [Debug](/elements/debug) element.
+---
+<script type="edgeside/rest"
+  data-edgeside-key="londonTime"
+  data-edgeside-endpoint="http://worldtimeapi.org/api/timezone/Europe/London" >
+</script>
+
+<script type="edgeside/transform" data-edgeside-key="londonTimeFormatted" data-edgeside-input-key="londonTime">
+  (
+    $offset:=$substringBefore(utc_offset,":")&$substringAfter(utc_offset,":");
+    $formattedDateTime:=function($fmt){$fromMillis($toMillis(datetime),$fmt, $offset)};
+
+    {
+      "timezone":timezone,
+      "day_of_year":day_of_year,
+      "datetime": $formattedDateTime('[M01]/[D01]/[Y0001] [h#1]:[m01][P]'),
+      "beeroclock":$number($formattedDateTime('[H#1]'))>=17
+    }
+  )
+</script>
+
+<script type="edgeside/debug" data-edgeside-key="londonTimeFormatted" >
+</script>

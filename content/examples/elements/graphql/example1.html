@@ -1,0 +1,22 @@
+---
+templateEngineOverride: false
+title: A Simple GraphQL Query
+description: We execute a simple GraphQL query, in this case to a service which provides
+  geographical data. Our query requests a list of continents, with the name and code of
+  each one. We dump the output to the screen using the [Debug](/elements/debug) element.
+---
+
+<script type="edgeside/graphql"
+  data-edgeside-key="continents"
+  data-edgeside-endpoint="http://countries.trevorblades.com/" >
+  {
+    continents {
+      name
+      code
+    }
+  }
+</script>
+
+<script type="edgeside/debug"
+        data-edgeside-key="continents">
+</script>

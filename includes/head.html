@@ -1,0 +1,24 @@
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    {% if title == "Home" %}
+    {{ site.title }} &middot; {{ site.tagline }}
+    {% else %}
+    {{ title }} &middot; {{ site.title }}
+    {% endif %}
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,700|Overlock+SC">
+  <link rel="stylesheet" href="/css/edgeside.css">
+<style>
+</style>
+  <script type="text/javascript">
+    {% include "prism.js" %}
+    {% include "show-source.js" %}
+  </script>
+</head>
