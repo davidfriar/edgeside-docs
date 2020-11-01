@@ -16,6 +16,9 @@ element:
     - name: data-edgeside-parameter-map
       description: provides an optional mapping between request params or URL segments in the original page request and parameters to the query. (see [Parameter Mapping](/parametermapping))
       required: false
+    - name: data-edgeside-input-key
+      description: specifies an optional key under which it should be able to find input data which can be used in a parameter map
+      required: false
   content: A query in the GraphQL language
 ---
 Fetches data from any service that exposes a GraphQL API.
