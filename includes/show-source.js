@@ -1,6 +1,6 @@
 const showSource = () => {
   const resultsElements = Array.from(
-    document.getElementsByClassName('live-results'),
+    document.getElementsByClassName('results-container'),
   )
   const sourceElements = Array.from(
     document.getElementsByClassName('live-results-source'),
@@ -9,10 +9,16 @@ const showSource = () => {
 
   zip(resultsElements, sourceElements).forEach(
     ([resultElement, sourceElement]) => {
-      console.log('resultElement:', resultElement.innerHTML)
-      console.log('sourceElement:', sourceElement.innerHTML)
+      let toHighlight = resultElement.innerHTML
+      if(resultElement.tagName == "IFRAME") {
+        console.log("found IFRAME")
+        console.log(resultElement.contentWindow.document)
+        console.log(resultElement.contentWindow.document.body)
+        console.log(resultElement.contentWindow.document.body.innerHTML)
+        toHighlight= resultElement.contentWindow.document.body.innerHTML
+      }
       const highlighted = Prism.highlight(
-        resultElement.innerHTML,
+        toHighlight,
         Prism.languages.html,
         'html',
       )

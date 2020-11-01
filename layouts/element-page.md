@@ -36,9 +36,9 @@ layout: page
 
 #### Live Results:
 {% if item.data.frame_url %}
-  <iframe width="100%" height="100%" src="{{item.data.frame_url}}" frameborder="0"></iframe>
+  <iframe class="results-container" width="100%" height="100%" src="{{item.data.frame_url}}" frameborder="0"></iframe>
 {% else %}
-  <div class="live-results">
+  <div class="live-results results-container">
   {{item.templateContent|safe}}
   </div>
 {% endif %}
