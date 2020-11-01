@@ -35,10 +35,13 @@ layout: page
 {% endhighlight %}
 
 #### Live Results:
-
-<div class="live-results">
-{{item.templateContent|safe}}
-</div>
+{% if item.data.frame_url %}
+  <iframe src="{{item.data.frame_url}}" frameborder="0"></iframe>
+{% else %}
+  <div class="live-results">
+  {{item.templateContent|safe}}
+  </div>
+{% endif %}
 
 #### Live Results (Source):
 

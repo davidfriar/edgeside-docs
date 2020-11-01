@@ -1,0 +1,31 @@
+---
+templateEngineOverride: false
+title: A Parameterised GraphQL Query (From Request Params)
+description: We execute a GraphQL query that takes a parameter, in this case to a service
+  which provides geographical data. Our query requests data about a country, with the country
+  code taken from a request parameter. We dump the output to the screen using the [Debug](/elements/debug)
+  element.
+layout: framed_example
+frame_url: /examples/elements/graphql/example2/?country=GB
+---
+
+<script type="edgeside/graphql"
+  data-edgeside-key="country"
+  data-edgeside-endpoint="http://countries.trevorblades.com/"
+  data-edgeside-paramter-map="code:country"
+  >
+  query Country ($code:ID!){country(code:$code){
+    name
+    native
+    phone
+    capital
+    continent {name}
+    languages {name native}
+    emoji
+    emojiU
+  }}
+</script>
+
+<script type="edgeside/debug"
+        data-edgeside-key="country">
+</script>
