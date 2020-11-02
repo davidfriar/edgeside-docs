@@ -1,0 +1,19 @@
+---
+templateEngineOverride: false
+title: A Parameterised REST Query (From Request Params)
+description: We execute a REST query that takes parameters, in this case to a service
+  which provides time data for a time zone. Our query requests data about a time zone, with the country
+  region and place taken from URL segments. We dump the output to the screen using the [Debug](/elements/debug)
+  element. Note that in order to support responding to multiple URLs from a single HTML page, we will
+  also need to use [URL Rewriting](/urlrewriting).
+layout: framed_example
+frame_url: /examples/elements/rest/Europe/London/example3
+---
+<script type="edgeside/rest"
+  data-edgeside-key="time"
+  data-edgeside-endpoint="http://worldtimeapi.org/api/timezone/$region/$place"
+  data-edgeside-parameter-map="$region:/2,$place:/1">
+</script>
+<script type="edgeside/debug"
+        data-edgeside-key="time">
+</script>
