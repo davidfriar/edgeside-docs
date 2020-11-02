@@ -34,18 +34,11 @@ layout: page
 {{item.templateContent|safe}}
 {% endhighlight %}
 
-#### Live Results:
 {% if item.data.frame_url %}
-  <iframe class="results-container" width="100%" height="100%" src="{{item.data.frame_url}}" frameborder="0"></iframe>
+  {% include "framed-results.md" %}
 {% else %}
-  <div class="live-results results-container">
-  {{item.templateContent|safe}}
-  </div>
+  {% include "results.md" %}
 {% endif %}
-
-#### Live Results (Source):
-
-<pre><code class="live-results-source language-html"></code></pre>
 
 ---
 
