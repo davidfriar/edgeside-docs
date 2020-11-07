@@ -4,10 +4,10 @@ tags: transformation
 order: 4
 element:
   attributes:
-    - name: data-edgeside-key
+    - name: data-edgeside-input
       description: specifies a key under which the transform element can expect to find  the data it needs to transform.
       required: true
-    - name: data-edgeside-input-key
+    - name: data-edgeside-output
       description: specifies a key under which the template processor will output transformed data
       required: true
   content: A transformation written in the [JSONata](https://docs.jsonata.org/overview.html) transformation language.

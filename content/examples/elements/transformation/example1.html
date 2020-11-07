@@ -8,11 +8,13 @@ description: We fetch some data from a service, but unfortunately the data is no
   directly using the [Debug](/elements/debug) element.
 ---
 <script type="edgeside/rest"
-  data-edgeside-key="londonTime"
+  data-edgeside-output="londonTime"
   data-edgeside-endpoint="http://worldtimeapi.org/api/timezone/Europe/London" >
 </script>
 
-<script type="edgeside/transform" data-edgeside-key="londonTimeFormatted" data-edgeside-input-key="londonTime">
+<script type="edgeside/transform"
+  data-edgeside-input="londonTime"
+  data-edgeside-output="londonTimeFormatted" >
   (
     $offset:=$substringBefore(utc_offset,":")&$substringAfter(utc_offset,":");
     $formattedDateTime:=function($fmt){$fromMillis($toMillis(datetime),$fmt, $offset)};
@@ -26,5 +28,5 @@ description: We fetch some data from a service, but unfortunately the data is no
   )
 </script>
 
-<script type="edgeside/debug" data-edgeside-key="londonTimeFormatted" >
+<script type="edgeside/debug" data-edgeside-input="londonTimeFormatted" >
 </script>

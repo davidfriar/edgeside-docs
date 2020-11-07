@@ -4,7 +4,7 @@ tags: template
 order: 1
 element:
   attributes:
-    - name: data-edgeside-key
+    - name: data-edgeside-input
       description: specifies a key under which the template processor can expect to find  the data it needs to populate the template.
       required: true
   content: A template written in the [Mustache](https://mustache.github.io/mustache.5.html) templating language.

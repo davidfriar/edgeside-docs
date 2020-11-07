@@ -4,7 +4,7 @@ tags: conditional
 order: 7
 element:
   attributes:
-    - name: data-edgeside-key
+    - name: data-edgeside-input
       description: specifies a key under which it should  expect to find data
       required: true
     - name: data-edgeside-expression

@@ -4,7 +4,7 @@ tags: debug
 order: 8
 element:
   attributes:
-    - name: data-edgeside-key
+    - name: data-edgeside-input
       description: specifies a key under which it should  expect to find data
       required: true
 ---

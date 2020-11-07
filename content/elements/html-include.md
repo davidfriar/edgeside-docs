@@ -4,9 +4,9 @@ tags: html-include
 order: 6
 element:
   attributes:
-    - name: data-edgeside-key
+    - name: data-edgeside-input
       description: specifies a key under which it should  expect to find data
-      required: true
+      required: false
     - name: data-edgeside-endpoint
       description: specifies the endpoint from which to fetch an HTML fragment
       required: true
@@ -18,6 +18,5 @@ Fetches an HTML fragment from an arbitrary URL and includes it in the page.
 
 *Possible future enhancements:*
 * *add parameter mapping to allow URL to be determined from the page request*
-* *add input key to allow data from another source to determine the URL*
 * *post-processing of the HTML using HTMLRewriter to allow rewrites such as fixing up links etc.*
 

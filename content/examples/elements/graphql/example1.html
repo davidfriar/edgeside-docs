@@ -7,7 +7,7 @@ description: We execute a simple GraphQL query, in this case to a service which 
 ---
 
 <script type="edgeside/graphql"
-  data-edgeside-key="continents"
+  data-edgeside-output="continents"
   data-edgeside-endpoint="http://countries.trevorblades.com/" >
   {
     continents {
@@ -18,5 +18,5 @@ description: We execute a simple GraphQL query, in this case to a service which 
 </script>
 
 <script type="edgeside/debug"
-        data-edgeside-key="continents">
+        data-edgeside-input="continents">
 </script>

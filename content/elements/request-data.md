@@ -4,7 +4,7 @@ tags: request-data
 order: 5
 element:
   attributes:
-    - name: data-edgeside-key
+    - name: data-edgeside-output
       description: specifies a key under which it should output data
       required: true
 ---
