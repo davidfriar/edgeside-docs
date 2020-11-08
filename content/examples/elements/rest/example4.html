@@ -1,0 +1,23 @@
+---
+templateEngineOverride: false
+title: A REST Query that uses request params (From Request Params)
+description: We execute a REST query that takes parameters as request params on the query endpoint,
+  in this case to a service which provides recipe searches. We map 'keywords' and 'ingrediants' request
+  params from the page to the 'i' and 'q' params required by the service. We output the result using
+  the [Template](/elements/template) element.
+layout: framed_example
+frame_url: /examples/elements/rest/example4/?ingredients=onions,garlic&keyword=trifle
+---
+<script type="edgeside/rest"
+  data-edgeside-output="recipeData"
+  data-edgeside-endpoint="http://www.recipepuppy.com/api/"
+  data-edgeside-parameter-map="i:ingredients,q:keyword">
+</script>
+<script type="edgeside/template"
+        data-edgeside-input="recipeData">
+<ul>
+{{#results}}
+<li><a href="{{href}}">{{title}}</a></li>
+{{/results}}
+</ul>
+</script>

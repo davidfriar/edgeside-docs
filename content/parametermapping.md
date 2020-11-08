@@ -30,7 +30,7 @@ The table below summarises the possibilities:
 |---|---|
 | foo | Use the search parameter named 'foo' as a variable named 'foo'. |
 | foo, bar | Use the search parameter named 'foo' as a variable named 'foo' and the search parameter named 'bar' as a variable named 'bar'.|
-| foo:wibble, bar:wobble | Use the search parameter named 'wibble' as a variable named 'foo' and the search parameter named 'wobble' as a variable named 'bar'.|
+| foo:wibble, bar:wobble | Use the search parameter named 'wibble' as a variable named 'foo' and the search parameter named 'wobble' as a variable named 'bar'. For graphql queries variables are passed using the standard GraphQL mechanism for GET requests. For REST queries they are passed as request params.|
 | city:/1,country:/2 | Extract the variables 'city' and 'country' from a URL, for example, like this *http://mysite.com/{country}/{city}/country.html*. |
-| $foo:foo | Use the request parameter named 'foo' as a value to replace the string $foo in the endpoint URL of a rest query. |
+| $foo:foo | Use the request parameter named 'foo' as a value to replace the string $foo in a segment of the endpoint URL of a rest query. |
 | country:${cf.country} | Make the country code detected by cloudflare in the incoming request available to use in a query as the variable 'country'. This assumes that there is a preceding [Request Data](request-data) element and that our **edgeside-data-input-key** has been set to the same value as its **data-edgeside-key.** |
