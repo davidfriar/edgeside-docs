@@ -4,14 +4,18 @@ title: Show Alternative Content
 description: Here we use data about the HTTP request, from the
   [Request Data](/elements/request-data) element. We want to display different
   content depending on the country that the request has come from. We use two
-  conditional elements to wrap our two different fragments of content.
+  conditional elements to wrap our two different fragments of content. Note here
+  that the two conditional elements show two alternative ways to use the quote character
+  in an attribute. We accept the literal ' character, as in the second
+  conditional element here, but some platforms may prefer to output the more technically
+  correct html entity reference **&#39;**, as in the first, which we will decode.
 ---
 <script type="edgeside/request-data"
         data-edgeside-output="requestData">
 </script>
 <script type="edgeside/conditional"
   data-edgeside-input="requestData"
-  data-edgeside-expression="headers['cf-ipcountry'] === 'GB'"
+  data-edgeside-expression="headers[&#39;cf-ipcountry&#39;] === 'GB'"
   >
   <h2>It looks like you are in the UK</h2>
 </script>
