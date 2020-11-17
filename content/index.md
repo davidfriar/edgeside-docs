@@ -16,13 +16,26 @@ When we talk about running at 'the edge', we mean that the processing takes plac
 
 ### So why wouldn't I just write my own Cloudflare Worker for my site?
 
+You certainly could. Cloudflare Workers is an amazing platform. It's very powerful, well documented, the developer experience is excellent and it's based on the familiar Service Workers API. The niche for the EdgeSide framework is when you want to implement your integrations declaratively and have your origin site in control of what's going on, rather than maintaining a significant amount of code separately in your edge-side worker. EdgeSide is particularly suitable as the foundation for a building a set of CMS components that deliver "authorable integration".
+
+We've built EdgeSide to be very open to customisation, but to work out of the box with minimal fuss. The idea is that if you want to you can just install an EdgeSide-based worker, have it up and running with close to zero configuration, and focus on building your site. If on the other hand you want your worker to do some other clever stuff then it's basically just a normal Cloudflare Worker, so you have the freedom to do whatever you want. Also, you can enrich the declarative 'language' available to your origin site by adding new custom 'elements'.
 
 
 ### Show me an example site
+
 You're looking at one.
+
+This site is built with the excellent [Eleventy](https://www.11ty.dev/) static site generator. All the pages are pure HTML + CSS (served statically from github pages). Wherever you see example code on the site, we also show you "live results", injected into the page by our EdgeSide-based Cloudflare Worker.
+
+You can also take a look at the [EdgeSide](https://edgeside.org) site, which we built as part of the [Cognifide](https://cognifide.com) hackathon. This is a fully content-managed site, built with a set of EdgeSide components we're developing for Adobe Experience Manager.
 
 ### How can I get started with using it?
 
-Bla bla bla ...
+1. Get yourself a Cloudflare account. No excuses -- it's free.
+1. Install Wrangler, the excellent command line tool provided by Cloudflare.
+1. Generate your worker project. Run *wrangler generate http://xxxxnotreadyyetbutcomingsoonxxxxx*
+1. Tell your worker where to find your origin site
+1. Start integrating stuff into your site for fun and profit.
 
+See [Getting Started](todo)
 
