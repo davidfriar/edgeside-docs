@@ -1,7 +1,7 @@
 ---
 layout: page
 ---
-
+{% import "example-list.md" as examples %}
 
 {% highlight "html" %}
 <script type="edgeside/{{elementType}}" ...>
@@ -24,23 +24,5 @@ layout: page
 ---
 
 ## Examples
-{% for item in collections[elementType] | includeTag('example') | sort(false, true, 'fileSlug') %}
 
-### {{item.fileSlug}} - {{item.data.title}}
-
-{{item.data.description}}
-
-{% highlight "html" %}
-{{item.templateContent|safe}}
-{% endhighlight %}
-
-{% if item.data.frame_url %}
-  {% include "framed-results.md" %}
-{% else %}
-  {% include "results.md" %}
-{% endif %}
-
----
-
-{% endfor %}
-
+{{examples.list(collections,elementType)}}

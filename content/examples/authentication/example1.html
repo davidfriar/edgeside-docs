@@ -1,0 +1,17 @@
+---
+templateEngineOverride: false
+title: A Parameterised REST Query (From Request Params)
+description: We execute a REST query that takes parameters, in this case to a service
+  which provides time data for a time zone. Our query requests data about a time zone, with the country
+  region and place taken from request parameters. We dump the output to the screen using the [Debug](/elements/debug)
+  element.
+---
+I am the authentication example
+<script type="edgeside/rest"
+  data-edgeside-output="weather"
+  data-edgeside-endpoint="https://api.openweathermap.org/data/2.5/weather?q=London&units=Metric"
+  data-edgeside-parameter-map="appid:${OWM_API_KEY}">
+</script>
+<script type="edgeside/debug"
+        data-edgeside-input="weather">
+</script>
