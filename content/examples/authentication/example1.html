@@ -11,7 +11,7 @@ description: We execute a REST query that takes parameters, in this case to a se
 </script>
 <script type="edgeside/rest"
   data-edgeside-input="requestData"
-  data-edgside-output="locationData"
+  data-edgeside-output="locationData"
   data-edgeside-endpoint="https://freegeoip.app/json/$ip"
   data-edgeside-parameter-map="$ip:${headers['cf-connecting-ip']}" >
 </script>
