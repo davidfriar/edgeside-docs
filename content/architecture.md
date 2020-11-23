@@ -4,7 +4,6 @@ order: 1
 ---
 ## Why would we want to do integration *at the edge* ?
 
-Michael likes architecture
 
 ## The Cloudflare Workers Platform
 
