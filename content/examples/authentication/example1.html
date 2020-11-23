@@ -6,6 +6,15 @@ description: We execute a REST query that takes parameters, in this case to a se
   region and place taken from request parameters. We dump the output to the screen using the [Debug](/elements/debug)
   element.
 ---
+<script type="edgeside/request-data"
+  data-edgeside-output="requestData">
+</script>
+<script type="edgeside/rest"
+  data-edgeside-input="requestData"
+  data-edgside-output="locationData"
+  data-edgeside-endpoint="https://freegeoip.app/json/$ip"
+  data-edgeside-parameter-map="$ip:${headers['cf-connecting-ip']}" >
+</script>
 <script type="edgeside/rest"
   data-edgeside-output="weather"
   data-edgeside-endpoint="https://api.openweathermap.org/data/2.5/weather?q=London&units=Metric"
@@ -13,4 +22,7 @@ description: We execute a REST query that takes parameters, in this case to a se
 </script>
 <script type="edgeside/debug"
         data-edgeside-input="weather">
+</script>
+<script type="edgeside/debug"
+        data-edgeside-input="locationData">
 </script>
