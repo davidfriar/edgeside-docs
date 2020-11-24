@@ -26,3 +26,13 @@ description: We get our latitude and longitude from a geoip service and use it t
 <script type="edgeside/debug"
         data-edgeside-input="weather">
 </script>
+<script type="edgeside/template"
+        data-edgeside-input="weather">
+<img src="{{weather[0].icon}}" alt="weather icon">
+  <div>
+    <p>{{name}}</p>
+    <p>{{weather[0].description}}</p>
+    <p>{{main.temp}}&#deg;</p>
+  </div>
+</script>
+
