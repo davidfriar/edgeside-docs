@@ -1,10 +1,9 @@
 ---
 templateEngineOverride: false
 title: A Parameterised REST Query (From Request Params)
-description: We execute a REST query that takes parameters, in this case to a service
-  which provides time data for a time zone. Our query requests data about a time zone, with the country
-  region and place taken from request parameters. We dump the output to the screen using the [Debug](/elements/debug)
-  element.
+description: We get our latitude and longitude from a geoip service and use it to request data
+  from a weather service. The weather service requires authentication using an API key, which we
+  have uploaded as a secret using Wrangler.
 ---
 <script type="edgeside/request-data"
   data-edgeside-output="requestData">
@@ -19,7 +18,7 @@ description: We execute a REST query that takes parameters, in this case to a se
   data-edgeside-input="location"
   data-edgeside-output="weather"
   data-edgeside-endpoint="https://api.openweathermap.org/data/2.5/weather?units=Metric"
-  data-edgeside-parameter-map="appid:${OWM_API_KEY},lat:latitude,lon:longitude">
+  data-edgeside-parameter-map="appid:${OWM_API_KEY},lat:${latitude},lon:${longitude}">
 </script>
 <script type="edgeside/debug"
         data-edgeside-input="weather">
