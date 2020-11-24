@@ -9,7 +9,10 @@ description: This time we get some pictures of cats in sunglasses, passing an AP
   data-edgeside-endpoint="https://api.thecatapi.com/v1/images/search?limit=5&category_ids=4"
   data-edgeside-parameter-map="#x-api-key:${CAT_API_KEY}">
 </script>
-<script type="edgeside/debug"
+<script type="edgeside/template"
         data-edgeside-input="cats">
+{{#.}}
+<img src="{{url}}">
+{{/.}}
 </script>
 
