@@ -1,0 +1,15 @@
+---
+templateEngineOverride: false
+title: Authenticate with secret API key passed in request headers
+description: This time we get some pictures of cats in sunglasses, passing an API key
+  to the cat service via a request header
+---
+<script type="edgeside/rest"
+  data-edgeside-output="cats"
+  data-edgeside-endpoint="https://api.thecatapi.com/v1/images/search?limit=5&category_ids=4"
+  data-edgeside-parameter-map="#x-api-key:${CAT_API_KEY}">
+</script>
+<script type="edgeside/debug"
+        data-edgeside-input="cats">
+</script>
+
