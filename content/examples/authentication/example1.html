@@ -11,18 +11,16 @@ description: We execute a REST query that takes parameters, in this case to a se
 </script>
 <script type="edgeside/rest"
   data-edgeside-input="requestData"
-  data-edgeside-output="locationData"
+  data-edgeside-output="location"
   data-edgeside-endpoint="https://freegeoip.app/json/$ip"
   data-edgeside-parameter-map="$ip:${headers['cf-connecting-ip']}" >
 </script>
 <script type="edgeside/rest"
+  data-edgeside-input="location"
   data-edgeside-output="weather"
-  data-edgeside-endpoint="https://api.openweathermap.org/data/2.5/weather?q=London&units=Metric"
-  data-edgeside-parameter-map="appid:${OWM_API_KEY}">
+  data-edgeside-endpoint="https://api.openweathermap.org/data/2.5/weather?units=Metric"
+  data-edgeside-parameter-map="appid:${OWM_API_KEY},lat:latitude,lon:longitude">
 </script>
 <script type="edgeside/debug"
         data-edgeside-input="weather">
-</script>
-<script type="edgeside/debug"
-        data-edgeside-input="locationData">
 </script>
