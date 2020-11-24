@@ -20,19 +20,13 @@ description: We get our latitude and longitude from a geoip service and use it t
   data-edgeside-endpoint="https://api.openweathermap.org/data/2.5/weather?units=Metric"
   data-edgeside-parameter-map="appid:${OWM_API_KEY},lat:${latitude},lon:${longitude}">
 </script>
-<script type="edgeside/debug"
-        data-edgeside-input="location">
-</script>
-<script type="edgeside/debug"
-        data-edgeside-input="weather">
-</script>
 <script type="edgeside/template"
         data-edgeside-input="weather">
 <img src="http://openweathermap.org/img/wn/{{weather.0.icon}}@4x.png" alt="weather icon">
   <div>
     <p>{{name}}</p>
     <p>{{weather.0.description}}</p>
-    <p>{{main.temp}}&deg;</p>
+    <p>{{main.temp}}&deg;C</p>
   </div>
 </script>
 
