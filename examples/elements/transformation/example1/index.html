@@ -1,0 +1,23 @@
+<script type="edgeside/rest"
+  data-edgeside-output="londonTime"
+  data-edgeside-endpoint="http://worldtimeapi.org/api/timezone/Europe/London" >
+</script>
+
+<script type="edgeside/transform"
+  data-edgeside-input="londonTime"
+  data-edgeside-output="londonTimeFormatted" >
+  (
+    $offset:=$substringBefore(utc_offset,":")&$substringAfter(utc_offset,":");
+    $formattedDateTime:=function($fmt){$fromMillis($toMillis(datetime),$fmt, $offset)};
+
+    {
+      "timezone":timezone,
+      "day_of_year":day_of_year,
+      "datetime": $formattedDateTime('[M01]/[D01]/[Y0001] [h#1]:[m01][P]'),
+      "beeroclock":$number($formattedDateTime('[H#1]'))>=17
+    }
+  )
+</script>
+
+<script type="edgeside/debug" data-edgeside-input="londonTimeFormatted" >
+</script>

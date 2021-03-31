@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+    GraphQL Query &middot; EdgeSide Docs
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,700|Overlock+SC&display=swap">
+  <link rel="stylesheet" href="/css/edgeside.css">
+<style>
+</style>
+  <script type="text/javascript">
+    /* PrismJS 1.22.0
+https://prismjs.com/download.html#themes=prism&languages=markup */
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(u){var c=/\blang(?:uage)?-([\w-]+)\b/i,n=0,M={manual:u.Prism&&u.Prism.manual,disableWorkerMessageHandler:u.Prism&&u.Prism.disableWorkerMessageHandler,util:{encode:function e(n){return n instanceof W?new W(n.type,e(n.content),n.alias):Array.isArray(n)?n.map(e):n.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).slice(8,-1)},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++n}),e.__id},clone:function t(e,r){var a,n;switch(r=r||{},M.util.type(e)){case"Object":if(n=M.util.objId(e),r[n])return r[n];for(var i in a={},r[n]=a,e)e.hasOwnProperty(i)&&(a[i]=t(e[i],r));return a;case"Array":return n=M.util.objId(e),r[n]?r[n]:(a=[],r[n]=a,e.forEach(function(e,n){a[n]=t(e,r)}),a);default:return e}},getLanguage:function(e){for(;e&&!c.test(e.className);)e=e.parentElement;return e?(e.className.match(c)||[,"none"])[1].toLowerCase():"none"},currentScript:function(){if("undefined"==typeof document)return null;if("currentScript"in document)return document.currentScript;try{throw new Error}catch(e){var n=(/at [^(\r\n]*\((.*):.+:.+\)$/i.exec(e.stack)||[])[1];if(n){var t=document.getElementsByTagName("script");for(var r in t)if(t[r].src==n)return t[r]}return null}},isActive:function(e,n,t){for(var r="no-"+n;e;){var a=e.classList;if(a.contains(n))return!0;if(a.contains(r))return!1;e=e.parentElement}return!!t}},languages:{extend:function(e,n){var t=M.util.clone(M.languages[e]);for(var r in n)t[r]=n[r];return t},insertBefore:function(t,e,n,r){var a=(r=r||M.languages)[t],i={};for(var l in a)if(a.hasOwnProperty(l)){if(l==e)for(var o in n)n.hasOwnProperty(o)&&(i[o]=n[o]);n.hasOwnProperty(l)||(i[l]=a[l])}var s=r[t];return r[t]=i,M.languages.DFS(M.languages,function(e,n){n===s&&e!=t&&(this[e]=i)}),i},DFS:function e(n,t,r,a){a=a||{};var i=M.util.objId;for(var l in n)if(n.hasOwnProperty(l)){t.call(n,l,n[l],r||l);var o=n[l],s=M.util.type(o);"Object"!==s||a[i(o)]?"Array"!==s||a[i(o)]||(a[i(o)]=!0,e(o,t,l,a)):(a[i(o)]=!0,e(o,t,null,a))}}},plugins:{},highlightAll:function(e,n){M.highlightAllUnder(document,e,n)},highlightAllUnder:function(e,n,t){var r={callback:t,container:e,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};M.hooks.run("before-highlightall",r),r.elements=Array.prototype.slice.apply(r.container.querySelectorAll(r.selector)),M.hooks.run("before-all-elements-highlight",r);for(var a,i=0;a=r.elements[i++];)M.highlightElement(a,!0===n,r.callback)},highlightElement:function(e,n,t){var r=M.util.getLanguage(e),a=M.languages[r];e.className=e.className.replace(c,"").replace(/\s+/g," ")+" language-"+r;var i=e.parentElement;i&&"pre"===i.nodeName.toLowerCase()&&(i.className=i.className.replace(c,"").replace(/\s+/g," ")+" language-"+r);var l={element:e,language:r,grammar:a,code:e.textContent};function o(e){l.highlightedCode=e,M.hooks.run("before-insert",l),l.element.innerHTML=l.highlightedCode,M.hooks.run("after-highlight",l),M.hooks.run("complete",l),t&&t.call(l.element)}if(M.hooks.run("before-sanity-check",l),!l.code)return M.hooks.run("complete",l),void(t&&t.call(l.element));if(M.hooks.run("before-highlight",l),l.grammar)if(n&&u.Worker){var s=new Worker(M.filename);s.onmessage=function(e){o(e.data)},s.postMessage(JSON.stringify({language:l.language,code:l.code,immediateClose:!0}))}else o(M.highlight(l.code,l.grammar,l.language));else o(M.util.encode(l.code))},highlight:function(e,n,t){var r={code:e,grammar:n,language:t};return M.hooks.run("before-tokenize",r),r.tokens=M.tokenize(r.code,r.grammar),M.hooks.run("after-tokenize",r),W.stringify(M.util.encode(r.tokens),r.language)},tokenize:function(e,n){var t=n.rest;if(t){for(var r in t)n[r]=t[r];delete n.rest}var a=new i;return I(a,a.head,e),function e(n,t,r,a,i,l){for(var o in r)if(r.hasOwnProperty(o)&&r[o]){var s=r[o];s=Array.isArray(s)?s:[s];for(var u=0;u<s.length;++u){if(l&&l.cause==o+","+u)return;var c=s[u],g=c.inside,f=!!c.lookbehind,h=!!c.greedy,d=0,v=c.alias;if(h&&!c.pattern.global){var p=c.pattern.toString().match(/[imsuy]*$/)[0];c.pattern=RegExp(c.pattern.source,p+"g")}for(var m=c.pattern||c,y=a.next,k=i;y!==t.tail&&!(l&&k>=l.reach);k+=y.value.length,y=y.next){var b=y.value;if(t.length>n.length)return;if(!(b instanceof W)){var x=1;if(h&&y!=t.tail.prev){m.lastIndex=k;var w=m.exec(n);if(!w)break;var A=w.index+(f&&w[1]?w[1].length:0),P=w.index+w[0].length,S=k;for(S+=y.value.length;S<=A;)y=y.next,S+=y.value.length;if(S-=y.value.length,k=S,y.value instanceof W)continue;for(var E=y;E!==t.tail&&(S<P||"string"==typeof E.value);E=E.next)x++,S+=E.value.length;x--,b=n.slice(k,S),w.index-=k}else{m.lastIndex=0;var w=m.exec(b)}if(w){f&&(d=w[1]?w[1].length:0);var A=w.index+d,O=w[0].slice(d),P=A+O.length,L=b.slice(0,A),N=b.slice(P),j=k+b.length;l&&j>l.reach&&(l.reach=j);var C=y.prev;L&&(C=I(t,C,L),k+=L.length),z(t,C,x);var _=new W(o,g?M.tokenize(O,g):O,v,O);y=I(t,C,_),N&&I(t,y,N),1<x&&e(n,t,r,y.prev,k,{cause:o+","+u,reach:j})}}}}}}(e,a,n,a.head,0),function(e){var n=[],t=e.head.next;for(;t!==e.tail;)n.push(t.value),t=t.next;return n}(a)},hooks:{all:{},add:function(e,n){var t=M.hooks.all;t[e]=t[e]||[],t[e].push(n)},run:function(e,n){var t=M.hooks.all[e];if(t&&t.length)for(var r,a=0;r=t[a++];)r(n)}},Token:W};function W(e,n,t,r){this.type=e,this.content=n,this.alias=t,this.length=0|(r||"").length}function i(){var e={value:null,prev:null,next:null},n={value:null,prev:e,next:null};e.next=n,this.head=e,this.tail=n,this.length=0}function I(e,n,t){var r=n.next,a={value:t,prev:n,next:r};return n.next=a,r.prev=a,e.length++,a}function z(e,n,t){for(var r=n.next,a=0;a<t&&r!==e.tail;a++)r=r.next;(n.next=r).prev=n,e.length-=a}if(u.Prism=M,W.stringify=function n(e,t){if("string"==typeof e)return e;if(Array.isArray(e)){var r="";return e.forEach(function(e){r+=n(e,t)}),r}var a={type:e.type,content:n(e.content,t),tag:"span",classes:["token",e.type],attributes:{},language:t},i=e.alias;i&&(Array.isArray(i)?Array.prototype.push.apply(a.classes,i):a.classes.push(i)),M.hooks.run("wrap",a);var l="";for(var o in a.attributes)l+=" "+o+'="'+(a.attributes[o]||"").replace(/"/g,"&quot;")+'"';return"<"+a.tag+' class="'+a.classes.join(" ")+'"'+l+">"+a.content+"</"+a.tag+">"},!u.document)return u.addEventListener&&(M.disableWorkerMessageHandler||u.addEventListener("message",function(e){var n=JSON.parse(e.data),t=n.language,r=n.code,a=n.immediateClose;u.postMessage(M.highlight(r,M.languages[t],t)),a&&u.close()},!1)),M;var e=M.util.currentScript();function t(){M.manual||M.highlightAll()}if(e&&(M.filename=e.src,e.hasAttribute("data-manual")&&(M.manual=!0)),!M.manual){var r=document.readyState;"loading"===r||"interactive"===r&&e&&e.defer?document.addEventListener("DOMContentLoaded",t):window.requestAnimationFrame?window.requestAnimationFrame(t):window.setTimeout(t,16)}return M}(_self);"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+Prism.languages.markup={comment:/<!--[\s\S]*?-->/,prolog:/<\?[\s\S]+?\?>/,doctype:{pattern:/<!DOCTYPE(?:[^>"'[\]]|"[^"]*"|'[^']*')+(?:\[(?:[^<"'\]]|"[^"]*"|'[^']*'|<(?!!--)|<!--(?:[^-]|-(?!->))*-->)*\]\s*)?>/i,greedy:!0,inside:{"internal-subset":{pattern:/(\[)[\s\S]+(?=\]>$)/,lookbehind:!0,greedy:!0,inside:null},string:{pattern:/"[^"]*"|'[^']*'/,greedy:!0},punctuation:/^<!|>$|[[\]]/,"doctype-tag":/^DOCTYPE/,name:/[^\s<>'"]+/}},cdata:/<!\[CDATA\[[\s\S]*?]]>/i,tag:{pattern:/<\/?(?!\d)[^\s>\/=$<%]+(?:\s(?:\s*[^\s>\/=]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))|(?=[\s/>])))+)?\s*\/?>/,greedy:!0,inside:{tag:{pattern:/^<\/?[^\s>\/]+/,inside:{punctuation:/^<\/?/,namespace:/^[^\s>\/:]+:/}},"attr-value":{pattern:/=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+)/,inside:{punctuation:[{pattern:/^=/,alias:"attr-equals"},/"|'/]}},punctuation:/\/?>/,"attr-name":{pattern:/[^\s>\/]+/,inside:{namespace:/^[^\s>\/:]+:/}}}},entity:[{pattern:/&[\da-z]{1,8};/i,alias:"named-entity"},/&#x?[\da-f]{1,8};/i]},Prism.languages.markup.tag.inside["attr-value"].inside.entity=Prism.languages.markup.entity,Prism.languages.markup.doctype.inside["internal-subset"].inside=Prism.languages.markup,Prism.hooks.add("wrap",function(a){"entity"===a.type&&(a.attributes.title=a.content.replace(/&amp;/,"&"))}),Object.defineProperty(Prism.languages.markup.tag,"addInlined",{value:function(a,e){var s={};s["language-"+e]={pattern:/(^<!\[CDATA\[)[\s\S]+?(?=\]\]>$)/i,lookbehind:!0,inside:Prism.languages[e]},s.cdata=/^<!\[CDATA\[|\]\]>$/i;var n={"included-cdata":{pattern:/<!\[CDATA\[[\s\S]*?\]\]>/i,inside:s}};n["language-"+e]={pattern:/[\s\S]+/,inside:Prism.languages[e]};var t={};t[a]={pattern:RegExp("(<__[^]*?>)(?:<!\\[CDATA\\[(?:[^\\]]|\\](?!\\]>))*\\]\\]>|(?!<!\\[CDATA\\[)[^])*?(?=</__>)".replace(/__/g,function(){return a}),"i"),lookbehind:!0,greedy:!0,inside:n},Prism.languages.insertBefore("markup","cdata",t)}}),Prism.languages.html=Prism.languages.markup,Prism.languages.mathml=Prism.languages.markup,Prism.languages.svg=Prism.languages.markup,Prism.languages.xml=Prism.languages.extend("markup",{}),Prism.languages.ssml=Prism.languages.xml,Prism.languages.atom=Prism.languages.xml,Prism.languages.rss=Prism.languages.xml;
+
+    const showSourceForLiveResults = () => {
+  const resultsElements = Array.from(
+    document.getElementsByClassName('live-results'),
+  )
+  const sourceElements = Array.from(
+    document.getElementsByClassName('live-results-source'),
+  )
+  const zip = (a, b) => a.map((e, i) => [e, b[i]])
+
+  zip(resultsElements, sourceElements).forEach(
+    ([resultElement, sourceElement]) => {
+      showSource(resultElement, sourceElement)
+    },
+  )
+}
+
+const showFrameSource = (frameElement, sourceElementId) => {
+  element = frameElement.contentWindow.document.getElementsByClassName('live-results').item(0)
+  sourceElement = document.getElementById(sourceElementId)
+  showSource(element, sourceElement)
+}
+
+const showSource = (element,  sourceElement) => {
+  const highlighted = Prism.highlight(
+    element.innerHTML,
+    Prism.languages.html,
+    'html',
+  )
+  sourceElement.innerHTML = highlighted
+}
+
+Prism.manual = true
+
+document.addEventListener('DOMContentLoaded', function () {
+  showSourceForLiveResults()
+})
+
+  </script>
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          EdgeSide Docs
+        </a>
+      </h1>
+      <img class="sidebar-img" alt="logo" src="/img/julia9.jpeg"/>
+      <p>Livin&#39; on the Edge</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <ul><li><a href="/architecture/">Architecture</a></li>
+<li><a href="/elements/">Elements</a><ul><li><a href="/elements/template/">Template</a></li>
+<li><a href="/elements/graphql/">GraphQL Query</a></li>
+<li><a href="/elements/rest/">Rest Query</a></li>
+<li><a href="/elements/transformation/">Transformation</a></li>
+<li><a href="/elements/request-data/">Request Data</a></li>
+<li><a href="/elements/html-include/">HTML Include</a></li>
+<li><a href="/elements/conditional/">Conditional</a></li>
+<li><a href="/elements/debug/">Debug</a></li></ul></li>
+<li><a href="/configuration/">Configuration</a></li>
+<li><a href="/customisation/">Customisation</a></li>
+<li><a href="/parametermapping/">Parameter Mapping</a></li>
+<li><a href="/urlrewriting/">URL Rewriting</a></li>
+<li><a href="/authentication/">Authentication</a></li></ul>
+      <hr>
+      <a class="sidebar-nav-item" href="https://github.com/davidfriar/edgeside">GitHub project</a>
+    </nav>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="page">
+  <h1 class="page-title">GraphQL Query</h1>
+  <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>edgeside/graphql<span class="token punctuation">"</span></span> <span class="token attr-name">...</span><span class="token punctuation">></span></span></code></pre>
+<p>Fetches data from any service that exposes a GraphQL API.</p>
+<p><em>Current limitations:</em></p>
+<ul>
+<li><em>No out of the box handling of authentication. For now any service that requires authentication to be handled in a secure way will need a custom element handler (see <a href="/customisation">Customisation</a>)</em></li>
+</ul>
+<h2>Attributes</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:center">Required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>data-edgeside-output</strong></td>
+<td style="text-align:left">specifies a key under which it should output data</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>data-edgeside-endpoint</strong></td>
+<td style="text-align:left">specifies the endpoint for the GraphQL service</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>data-edgeside-cache-ttl</strong></td>
+<td style="text-align:left">specifies a Time To Live value for caching of query results in the Cloudflare cache, in seconds (default = 60)</td>
+<td style="text-align:center">no</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>data-edgeside-parameter-map</strong></td>
+<td style="text-align:left">provides an optional mapping between request params or URL segments in the original page request and parameters to the query. (see <a href="/parametermapping">Parameter Mapping</a>)</td>
+<td style="text-align:center">no</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>data-edgeside-input</strong></td>
+<td style="text-align:left">specifies an optional key under which it should be able to find input data which can be used in a parameter map</td>
+<td style="text-align:center">no</td>
+</tr>
+</tbody>
+</table>
+<h2>Element content</h2>
+<p>A query in the GraphQL language</p>
+<hr>
+<h2>Examples</h2>
+<h3>example1 - A Simple GraphQL Query</h3>
+<p>We execute a simple GraphQL query, in this case to a service which provides geographical data. Our query requests a list of continents, with the name and code of each one. We dump the output to the screen using the <a href="/elements/debug">Debug</a> element.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>edgeside/graphql<span class="token punctuation">"</span></span><br>  <span class="token attr-name">data-edgeside-output</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>continents<span class="token punctuation">"</span></span><br>  <span class="token attr-name">data-edgeside-endpoint</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://countries.trevorblades.com/<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"><br>  <span class="token punctuation">{</span><br>    continents <span class="token punctuation">{</span><br>      name<br>      code<br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>edgeside/debug<span class="token punctuation">"</span></span><br>        <span class="token attr-name">data-edgeside-input</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>continents<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<h4>Live Results:</h4>
+  <div class="live-results">
+<script type="edgeside/graphql"
+  data-edgeside-output="continents"
+  data-edgeside-endpoint="http://countries.trevorblades.com/" >
+  {
+    continents {
+      name
+      code
+    }
+  }
+</script>
+<script type="edgeside/debug"
+        data-edgeside-input="continents">
+</script>
+  </div>
+<h4>Live Results (Source):</h4>
+<pre><code class="live-results-source language-html"></code></pre>
+<hr>
+<h3>example2 - A Parameterised GraphQL Query (From Request Params)</h3>
+<p>We execute a GraphQL query that takes a parameter, in this case to a service which provides geographical data. Our query requests data about a country, with the country code taken from a request parameter. We dump the output to the screen using the <a href="/elements/debug">Debug</a> element.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>edgeside/graphql<span class="token punctuation">"</span></span><br>  <span class="token attr-name">data-edgeside-output</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>country<span class="token punctuation">"</span></span><br>  <span class="token attr-name">data-edgeside-endpoint</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://countries.trevorblades.com/<span class="token punctuation">"</span></span><br>  <span class="token attr-name">data-edgeside-parameter-map</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>code:country<span class="token punctuation">"</span></span><br>  <span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"><br>  query <span class="token function">Country</span> <span class="token punctuation">(</span><span class="token parameter">$code<span class="token operator">:</span><span class="token constant">ID</span><span class="token operator">!</span></span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token function">country</span><span class="token punctuation">(</span><span class="token parameter">code<span class="token operator">:</span>$code</span><span class="token punctuation">)</span><span class="token punctuation">{</span><br>    name<br>    native<br>    phone<br>    capital<br>    continent <span class="token punctuation">{</span>name<span class="token punctuation">}</span><br>    languages <span class="token punctuation">{</span>name native<span class="token punctuation">}</span><br>    emoji<br>    emojiU<br>  <span class="token punctuation">}</span><span class="token punctuation">}</span><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>edgeside/debug<span class="token punctuation">"</span></span><br>        <span class="token attr-name">data-edgeside-input</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>country<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<h4>Live Results:</h4>
+<form spellcheck="false" action="">
+  <input type="text" size="47" name="url" value="/examples/elements/graphql/example2/?country=GB">
+  <input type="button" class="btn" value="Reload" onClick="document.getElementById('frame2').src=this.form.url.value">
+</form>
+  <iframe id="frame2" onload="showFrameSource(this, 'source2')" class="results-container" width="100%" height="100%" src="/examples/elements/graphql/example2/?country=GB" frameborder="0"></iframe>
+<h4>Live Results (Source):</h4>
+<pre><code id="source2" class="language-html"></code></pre>
+<hr>
+<h3>example3 - A Parameterised GraphQL Query (From URL Segment)</h3>
+<p>We execute a GraphQL query that takes a parameter, in this case to a service which provides geographical data. Our query requests data about a country, with the country code taken from a segment of the URL. We dump the output to the screen using the <a href="/elements/debug">Debug</a> element. Note that in order to support responding to multiple URLs from a single HTML page, we will also need to use <a href="/urlrewriting">URL Rewriting</a>.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>edgeside/graphql<span class="token punctuation">"</span></span><br>  <span class="token attr-name">data-edgeside-output</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>country<span class="token punctuation">"</span></span><br>  <span class="token attr-name">data-edgeside-endpoint</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://countries.trevorblades.com/<span class="token punctuation">"</span></span><br>  <span class="token attr-name">data-edgeside-parameter-map</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>code:/1<span class="token punctuation">"</span></span><br>  <span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"><br>  query <span class="token function">Country</span> <span class="token punctuation">(</span><span class="token parameter">$code<span class="token operator">:</span><span class="token constant">ID</span><span class="token operator">!</span></span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token function">country</span><span class="token punctuation">(</span><span class="token parameter">code<span class="token operator">:</span>$code</span><span class="token punctuation">)</span><span class="token punctuation">{</span><br>    name<br>    native<br>    phone<br>    capital<br>    continent <span class="token punctuation">{</span>name<span class="token punctuation">}</span><br>    languages <span class="token punctuation">{</span>name native<span class="token punctuation">}</span><br>    emoji<br>    emojiU<br>  <span class="token punctuation">}</span><span class="token punctuation">}</span><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>edgeside/debug<span class="token punctuation">"</span></span><br>        <span class="token attr-name">data-edgeside-input</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>country<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<h4>Live Results:</h4>
+<form spellcheck="false" action="">
+  <input type="text" size="38" name="url" value="/examples/elements/graphql/GB/example3">
+  <input type="button" class="btn" value="Reload" onClick="document.getElementById('frame3').src=this.form.url.value">
+</form>
+  <iframe id="frame3" onload="showFrameSource(this, 'source3')" class="results-container" width="100%" height="100%" src="/examples/elements/graphql/GB/example3" frameborder="0"></iframe>
+<h4>Live Results (Source):</h4>
+<pre><code id="source3" class="language-html"></code></pre>
+<hr>
+
+</div>
+
+    </div>
+
+  </body>
+</html>

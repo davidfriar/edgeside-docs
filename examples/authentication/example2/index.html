@@ -1,0 +1,12 @@
+<script type="edgeside/rest"
+  data-edgeside-output="cats"
+  data-edgeside-endpoint="https://api.thecatapi.com/v1/favourites"
+  data-edgeside-parameter-map="#x-api-key:${CAT_API_KEY}">
+</script>
+<script type="edgeside/template"
+        data-edgeside-input="cats">
+{{#.}}
+<img src="{{image.url}}">
+{{/.}}
+</script>
+

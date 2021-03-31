@@ -1,0 +1,15 @@
+<script type="edgeside/request-data"
+        data-edgeside-output="requestData">
+</script>
+<script type="edgeside/conditional"
+  data-edgeside-input="requestData"
+  data-edgeside-expression="headers[&#39;cf-ipcountry&#39;] === 'GB'"
+  >
+  <h2>It looks like you are in the UK</h2>
+</script>
+<script type="edgeside/conditional"
+  data-edgeside-input="requestData"
+  data-edgeside-expression="headers['cf-ipcountry'] !== 'GB'"
+  >
+  <h2>It looks like you are somewhere outside the UK</h2>
+</script>
